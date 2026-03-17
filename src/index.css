@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Dashboard Card Gradients */
+.card-pink { 
+  background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%); 
+  border-left: 5px solid #fb7185;
+}
+.card-purple { 
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); 
+  border-left: 5px solid #8b5cf6;
+}
+.card-blue { 
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); 
+  border-left: 5px solid #3b82f6;
+}
+.card-yellow { 
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%); 
+  border-left: 5px solid #eab308;
+}
+.card-gray { 
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%); 
+  border-left: 5px solid #9ca3af;
+}
+
+/* Dashboard Card Base */
+.dashboard-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 24px;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Glitter / Shiny Effect */
+.glitter-effect::after {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s;
+  pointer-events: none;
+}
+
+.glitter-effect:hover::after {
+  top: 150%;
+  left: 150%;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.shiny-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shine 3s infinite;
+}
